@@ -6,7 +6,7 @@ $setrose=0;
 if(isset($_GET['rose'])) 
     $setrose=$_GET['rose'];
 @endphp
-
+<!-- testing -->
 <div id="alphabetFilter" class="">
 
     <a href="/webapps/dance?rose={{$setrose}}&filter=#">&nbsp;#&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=A">&nbsp;A&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=B">&nbsp;B&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=C">&nbsp;C&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=D">&nbsp;D&nbsp;</a>-
