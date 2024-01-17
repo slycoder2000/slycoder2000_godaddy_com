@@ -106,7 +106,10 @@ Route::get('/family/animals/barnswallows', 'FamilyController@barnswallows');
     
         });
 
-
+        Route::get('/webapps/dance/usercustomlists/index', 'UserCustomListsController@index');
+        Route::post('/webapps/dance/usercustomlists/create', 'UserCustomListsController@create');
+        Route::get('/webapps/dance/usercustomlists/store', 'UserCustomListsController@store');
+        Route::get('/webapps/dance/usercustomlists/show/{id}', 'UserCustomListsController@show');
     });
 //});
 

@@ -88,51 +88,50 @@
        
         </nav>
 
-        <main class="py-4">
+        <main class="py-0">
 
             <section class="set1 card">
 
             @include('inc.messages')
 
             <article class="block1 card-header row">
-                <div class="col-12">
+
             <!-- if parameter exists, check value -->
             @php
+            $rose=1;
             if(isset($_GET['rose'])) {
-                if($_GET['rose']==1) {
-                    $rose=0;
-                } else {
-                    $rose=1;
-                }
-                } else {
-                    $rose=1;
-                }
-            
+                ($_GET['rose']==1)?$rose=0:$rose=1;
+            }
             @endphp
-                    <a href="/webapps/dance?rose={{$rose}}" class="btn btn-primary {{ Request::is('webapps/dance') ? 'active' : '' }}" aria-pressed="true" role="button" >
+                    <a href="/webapps/dance?rose={{$rose}}" class="col-4 col-md-3 btn btn-primary align-middle {{ Request::is('webapps/dance') ? 'active' : '' }}" aria-pressed="true" role="button" >
             @php
-                if($rose==1) {
-                    echo "Showing [ALL] / Rose&nbsp;Favs";
-                } else {
-                    echo "Showing All / [ROSE&nbsp;FAVS]";
-                }
-            
+                echo "Showing " , ($rose==1) ? "[ALL] / Rose&nbsp;Favs" : "All / [ROSE&nbsp;FAVS]";
             @endphp
             
             
                     </a>
-                    <a href="/webapps/dance/songlist" class="btn btn-primary {{ Request::is('webapps/dance/songlist') ? 'active' : '' }}" aria-pressed="true" role="button">
+                    <a href="/webapps/dance/songlist" class="col-2 col-md-2 btn btn-primary {{ Request::is('webapps/dance/songlist') ? 'active' : '' }}" aria-pressed="true" role="button">
                     Song List
                     </a>
-            
-            
-                    <button type="button" class="btn btn-primary col-md-4 col-sm-12">
-                    <form action="/webapps/dance/search", method="GET">
+            @auth
+            <form action="/webapps/dance/search" class="col-3 col-md-3" method="GET">
+            <select class="btn btn-primary" name="mylists" id="mylists" onchange="window.location.href='/webapps/dance/usercustomlists/show/'+this.options[this.selectedIndex].id;">
+  <option value="">[My Lists]</option>
+
+            @foreach(\App\Models\customlists::CurrentUser()->get() as $listnames)
+                <option id="{{ $listnames->id }}" value="{{ $listnames->listname }}" onclick="/">{{ $listnames->listname }}</option>
+            @endforeach
+
+</select>
+        </form>
+            @endauth
+                    <form action="/webapps/dance/search" class="btn btn-primary col-* col-md-4" method="GET">
                     <input placeholder="Search" name="search" style="width:200px" value='{{ request()->search}}'>
-                    <img src="{{asset('images/magglass.png')}}" height="18px">
-                    </form>
+                    <button type="submit" class="btn btn-success">
+                        <img src="{{asset('images/magglass.png')}}" height="18px">
                     </button>
-                </div>
+                    </form>
+
             
             
             </article>

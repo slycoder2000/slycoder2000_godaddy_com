@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateDanceSongsTable extends Migration
+class CreateCustomlistsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateDanceSongsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dance_songs', function (Blueprint $table) {
+        Schema::create('customlists', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title',256);
-            $table->string('artist',256);
+            $table->Integer('id_user');
+            $table->string('listname',25);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateDanceSongsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dance_songs');
+        Schema::dropIfExists('customlists');
     }
 }

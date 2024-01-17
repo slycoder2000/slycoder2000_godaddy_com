@@ -2,17 +2,15 @@
 
 @section('content')
 @php
-$setrose=0;
-if(isset($_GET['rose'])) 
-    $setrose=$_GET['rose'];
+$id=$customid;
 @endphp
 
 <div id="alphabetFilter" class="">
 
-    <a href="/webapps/dance?rose={{$setrose}}&filter=#">&nbsp;#&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=A">&nbsp;A&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=B">&nbsp;B&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=C">&nbsp;C&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=D">&nbsp;D&nbsp;</a>-
-    <a href="/webapps/dance?rose={{$setrose}}&filter=E">&nbsp;E&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=F">&nbsp;F&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=G">&nbsp;G&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=H">&nbsp;H&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=I">&nbsp;I&nbsp;</a>-
-    <a href="/webapps/dance?rose={{$setrose}}&filter=J">&nbsp;J&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=K">&nbsp;K&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=L">&nbsp;L&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=M">&nbsp;M&nbsp;</a>-
-    <a href="/webapps/dance?rose={{$setrose}}&filter=N">&nbsp;N&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=O">&nbsp;O&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=P">&nbsp;P&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=Q">&nbsp;Q&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=R">&nbsp;R&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=S">&nbsp;S&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=T">&nbsp;T&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=U">&nbsp;U&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=V">&nbsp;V&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=W">&nbsp;W&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=X">&nbsp;X&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=Y">&nbsp;Y&nbsp;</a>-<a href="/webapps/dance?rose={{$setrose}}&filter=Z">&nbsp;Z </a>
+    <a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=#">&nbsp;#&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=A">&nbsp;A&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=B">&nbsp;B&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=C">&nbsp;C&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=D">&nbsp;D&nbsp;</a>-
+    <a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=E">&nbsp;E&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=F">&nbsp;F&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=G">&nbsp;G&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=H">&nbsp;H&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=I">&nbsp;I&nbsp;</a>-
+    <a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=J">&nbsp;J&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=K">&nbsp;K&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=L">&nbsp;L&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=M">&nbsp;M&nbsp;</a>-
+    <a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=N">&nbsp;N&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=O">&nbsp;O&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=P">&nbsp;P&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=Q">&nbsp;Q&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=R">&nbsp;R&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=S">&nbsp;S&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=T">&nbsp;T&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=U">&nbsp;U&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=V">&nbsp;V&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=W">&nbsp;W&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=X">&nbsp;X&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=Y">&nbsp;Y&nbsp;</a>-<a href="/webapps/dance/usercustomlists/show/{{$id}}?filter=Z">&nbsp;Z </a>
 
 <div id='accordion' style="padding:10px 10px 10px 10px">
 
@@ -38,11 +36,6 @@ if(isset($_GET['rose']))
                 </a>
             </h5>
             </div>
-@auth
-            <div class="col-sm-3">
-                <a href="/webapps/dance/usercustomlists/index?id_dance={{$dance -> id}}" class="btn btn-primary justify-content-right" >+ Add to List</a>
-            </div>
-@endauth
         </div>
         <div id="faq{{$dance -> id}}" class="panel-collapse collapse in bg-secondary text-white" style='padding-left:5px' role="tabpanel" aria-labelledby="heading{{$dance -> id}}">
             <div class="panel-body">
