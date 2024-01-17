@@ -103,14 +103,14 @@
                 ($_GET['rose']==1)?$rose=0:$rose=1;
             }
             @endphp
-                    <a href="/webapps/dance?rose={{$rose}}" class="col-4 col-md-3 btn btn-primary align-middle {{ Request::is('webapps/dance') ? 'active' : '' }}" aria-pressed="true" role="button" >
+                    <a href="/webapps/dance?rose={{$rose}}" class="col-5 col-md-3 btn btn-primary align-middle {{ Request::is('webapps/dance') ? 'active' : '' }}" aria-pressed="true" role="button" >
             @php
                 echo "Showing " , ($rose==1) ? "[ALL] / Rose&nbsp;Favs" : "All / [ROSE&nbsp;FAVS]";
             @endphp
             
             
                     </a>
-                    <a href="/webapps/dance/songlist" class="col-2 col-md-2 btn btn-primary {{ Request::is('webapps/dance/songlist') ? 'active' : '' }}" aria-pressed="true" role="button">
+                    <a href="/webapps/dance/songlist" class="col-3 col-md-2 btn btn-primary {{ Request::is('webapps/dance/songlist') ? 'active' : '' }}" aria-pressed="true" role="button">
                     Song List
                     </a>
             @auth
